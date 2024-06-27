@@ -27,24 +27,32 @@ const App = () => {
   );
 
   return (
-    <div className="bg-gray-100 flex items-center justify-center min-h-screen">
-      <div className="container mx-auto flex flex-col md:flex-row bg-white p-4 w-[60rem] rounded shadow">
-        <div className="w-full md:w-3/5 bg-gray-100 p-4 rounded m-2">
-          <FriendsList
-            myFriends={myFriends}
-            setMyFriends={setMyFriends}
-            selectedFriend={selectedFriend}
-            setSelectedFriend={setSelectedFriend}
-          />
-          <AddFriend setMyFriends={setMyFriends} myFriends={myFriends} />
-        </div>
+    <div className="bg-gray-100 flex flex-col items-center min-h-screen">
+      <img
+        className="w-20 mt-8"
+        src="https://www.pngall.com/wp-content/uploads/14/Dollar-Sign-PNG-Photos.png"
+        alt=""
+      />
+      <span className="font-black text-4xl italic mb-4">Bill Splitter</span>
+      <div className="container mx-auto flex flex-col md:flex-row bg-white p-4 md:w-full lg:w-[60rem] rounded shadow">
+        <div className="flex flex-col md:flex-row w-full">
+          <div className="w-full md:w-1/2 p-4 rounded m-2 bg-gray-100">
+            <FriendsList
+              myFriends={myFriends}
+              setMyFriends={setMyFriends}
+              selectedFriend={selectedFriend}
+              setSelectedFriend={setSelectedFriend}
+            />
+            <AddFriend setMyFriends={setMyFriends} myFriends={myFriends} />
+          </div>
 
-        <div className="w-full md:w-3/5 bg-orange-100 p-4 rounded m-2 ml-auto">
-          <FormArea
-            myFriends={myFriends}
-            setMyFriends={setMyFriends}
-            selectedFriend={selectedFriend}
-          />
+          <div className="w-full md:w-1/2 p-4 rounded m-2 bg-orange-100">
+            <FormArea
+              myFriends={myFriends}
+              setMyFriends={setMyFriends}
+              selectedFriend={selectedFriend}
+            />
+          </div>
         </div>
       </div>
     </div>
