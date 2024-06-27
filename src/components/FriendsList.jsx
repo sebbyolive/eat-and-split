@@ -1,11 +1,19 @@
 import Friend from "./Friend";
 
-const FriendsList = () => {
+const FriendsList = ({ myFriends, selectedFriend, setSelectedFriend }) => {
   return (
     <div className="p-4">
-      <Friend />
-      <Friend />
-      <Friend />
+      {myFriends.map((friend, index) => (
+        <Friend
+          key={index}
+          index={index}
+          name={friend.name}
+          img={friend.img}
+          selectedFriend={selectedFriend}
+          setSelectedFriend={setSelectedFriend}
+          myFriends={myFriends}
+        />
+      ))}
     </div>
   );
 };
